@@ -1,10 +1,9 @@
 # Test
 
-Este diretório contém arquivos de teste, dados de validação e scripts auxiliares para verificação do modelo e sistema.
+Este diretório contém arquivos de teste, dados de validação para verificação do modelo e sistema.
 
 ## Conteúdo
 
 - Dados de teste MNIST
-- Scripts de transformação de imagens
-- Conjuntos de dados de validação
+- Conjuntos de dados de Teste
 - Diretórios com imagens e datasets auxiliares
