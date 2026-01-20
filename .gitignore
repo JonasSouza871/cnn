@@ -1,0 +1,7 @@
+build/
+pico_sdk_import.cmake
+mnist_images_test/
+.vscode/
+pico-tflmicro/
+test/mnist_dataset/
+test/mnist_images_test.rar
