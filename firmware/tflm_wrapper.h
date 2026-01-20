@@ -5,26 +5,18 @@
 extern "C" {
 #endif
 
-// Retorna 0 se OK, !=0 se erro
-int  tflm_init(void);
+int tflm_init(void);  // Inicializa TFLM e carrega modelo, retorna 0 se OK
 
-// Ponteiro para o buffer de entrada (INT8) e quantidade de bytes
-int8_t*  tflm_input_ptr(int* nbytes);
+int8_t* tflm_input_ptr(int* nbytes); // Ponteiro pro buffer de entrada int8[784]
+int8_t* tflm_output_ptr(int* nbytes);  // Ponteiro pro buffer de saída int8[10]
 
-// Ponteiro para o buffer de saída (INT8) e quantidade de bytes
-int8_t*  tflm_output_ptr(int* nbytes);
+float tflm_input_scale(void); // Scale do tensor de entrada
+int tflm_input_zero_point(void); // Zero point do tensor de entrada
+float tflm_output_scale(void);// Scale do tensor de saída
+int tflm_output_zero_point(void); // Zero point do tensor de saída
 
-// Quantização (scale e zero_point) de input/output
-float tflm_input_scale(void);
-int   tflm_input_zero_point(void);
-float tflm_output_scale(void);
-int   tflm_output_zero_point(void);
-
-// Executa inferência: 0 OK, !=0 erro
-int  tflm_invoke(void);
-
-// Diagnóstico
-int  tflm_arena_used_bytes(void);
+int tflm_invoke(void); // Executa inferência, retorna 0 se OK
+int tflm_arena_used_bytes(void);  // Retorna bytes usados da arena (debug)
 
 #ifdef __cplusplus
 }
